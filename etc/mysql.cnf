@@ -1,0 +1,4 @@
+[client]
+database = ask
+user = box
+default-character-set = utf8
