@@ -6,6 +6,7 @@
 
         bash init.sh init
 
+
 > ## Этапы реализации проекта
 >
 > 1. Отдача статических файлов (п. 1.8)
@@ -17,6 +18,7 @@
 > 1. Сессии и авторизация (п. 2.7)
 
 
+
 > ## Подготовка рабочего окружения
 >
 > - Ubuntu 14.04.6
@@ -24,6 +26,7 @@
 > - Django 1.10.5
 >
 >       sudo apt-get install python-pip
+>
 >
 >       sudo pip install django==1.10.5
 >
@@ -39,7 +42,10 @@
 >
 >       sudo apt-get install mysql-client mysql-server
 >
+>
 >       sudo apt-get install python-dev libmysqlclient-dev build-essential
 >
+>
 >       sudo pip install mysqlclient
+>
 
