@@ -3,6 +3,7 @@
 Разработка проекта в рамках курса "Web-технологии" на [Stepik](https://stepik.org/154)
 
 
+
 ## Быстрое начало
 
     bash init.sh init
