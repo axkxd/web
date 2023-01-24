@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Вопросы и ответы</title>
+</head>
+<body>
+	<div class="top">
+		<div class="logo">
+			<h1><a href="/">Главная страница</a></h1>
+		</div>
+		<div class="login_menu">
+			{% if user.id %}
+			<p> {{ user }} </p>
+			<a href="/logout/">Выйти</a>
+			{% endif %}
+			{% if not user.id %}
+			<a href="/login/">Регистрация</a>
+			<a href="/signup/">Войти</a>
+			{% endif %}
+		</div>
+
+	</div>
+	<div>
+		<br> <hr> <br>
+	</div>
+
+	<div class="container">
+		<nav>
+			<h2>Вопросы:</h2>
+			<a href="/new/">Новые вопросы</a>
+			<a href="/popular/">Популярные вопросы</a>
+			<a href="/ask/">Задать вопрос</a>
+		</nav>
+		<div>
+			<br> <hr> <br>
+		</div>
+		{% block content %} {% endblock %}
+	</div>
+
+	<div>
+		<br> <hr> <br>
+	</div>
+</body>
+</html>

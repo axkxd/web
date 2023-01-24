@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="content">
+	<div class="question">
+		<h2> Вопросы: {{ question.title }} </h2>
+		<p> Дата: {{ question.added_at }} </p>
+		<p> {{ question.text }} </p>
+	</div>
+	<div> <br> <hr> <br> </div>
+	<div>
+		<h3> Ответы:</h3>
+			{% for answer in answers %}
+			<div>
+				<p> {{ answer.id }} {{ answer.text }} </p>
+				<p> {{ answer.added_at }} </p>
+			</div>
+			{% endfor %}
+	</div>
+	<div> <br> <hr> <br> </div>
+	<div class="form">
+      <h3>Добавить ответ</h3>
+      <form action="{{ question.get_url }}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+</div>
+{% endblock %}

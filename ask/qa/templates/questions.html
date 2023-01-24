@@ -1,0 +1,26 @@
+<div class="pagination">
+	{% for question in questions %}
+	<div>
+		<h3> {{ question.title }} </h3>
+		<p> Автор: {{ question.author }}, {{ question.added_at }} </p>
+		<p><a href="{{ question.get_url }}">Go</a></p>
+	</div>
+	<hr>
+	{% endfor %}
+</div>
+<div>
+	<br> <hr> <br>
+</div>
+<div class="pagination">
+	<span class="step-links">
+		{% if questions.has_previous %}
+			<a href="?page={{ questions.previous_page_number }}">previous</a>
+		{% endif %}
+		<span class="current">
+			Страница {{ questions.number }} of {{ questions.paginator.num_pages }}.
+		</span>
+		{% if questions.has_next %}
+			<a href="?page={{ questions.next_page_number }}">next</a>
+		{% endif %}
+	</span>
+</div>
