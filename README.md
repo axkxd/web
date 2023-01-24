@@ -2,6 +2,7 @@
 
 Разработка проекта в рамках курса "Web-технологии" на [Stepik](https://stepik.org/154)
 
+
 ## Быстрое начало
 
         bash init.sh init
@@ -28,20 +29,20 @@
 >
 >       sudo pip install django==1.10.5
 >
-> - Nginx 1.4.6
+> - Nginx
 >
 >       sudo apt-get install nginx
 >
-> - Gunicorn 17.5.0
+> - Gunicorn
 >
 >       sudo apt-get install gunicorn
 >
-> - Mysql 5.5.62
+> - Mysql
 >
->       `sudo apt-get install mysql-client mysql-server`
+>       sudo apt-get install mysql-client mysql-server
 >
->       `sudo apt-get install python-dev libmysqlclient-dev build-essential`
+>       sudo apt-get install python-dev libmysqlclient-dev build-essential
 >
->       `sudo pip install mysqlclient`
+>       sudo pip install mysqlclient
 >
 
