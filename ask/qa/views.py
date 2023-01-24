@@ -6,11 +6,11 @@ from django.contrib.auth import authenticate, login, logout
 from .models import Question, Answer
 from .forms import AskForm, AnswerForm, LoginForm, SignupForm
 
-# тестовая
+
 def test(request, *args, **kwargs):
     return HttpResponse('OK')
 
-# пагинатор для вопросов
+
 def paginate_questions(request, qs):
     limit = 10
     page = request.GET.get('page', 1)
@@ -23,7 +23,7 @@ def paginate_questions(request, qs):
         page = paginator.page(paginator.num_pages)
     return page
 
-# для главной страницы и новых вопросов(/, /new/)
+
 def new_questions(request):
     question_list = Question.objects.new()
     questions = paginate_questions(request, question_list)
@@ -33,7 +33,7 @@ def new_questions(request):
         'session': request.session,
     })
 
-# для популярных вопросов(/popular/)
+
 def popular_questions(request):
     question_list = Question.objects.popular()
     questions = paginate_questions(request, question_list)
@@ -43,7 +43,7 @@ def popular_questions(request):
         'session': request.session,
     })
 
-# для одного вопроса
+
 def question_details(request, id = None):
     question = get_object_or_404(Question, id = id)
     answers = question.answer_set.all()
@@ -63,7 +63,7 @@ def question_details(request, id = None):
         'session': request.session,
     })
 
-# чтобы задать новый впрос
+
 def ask_question(request):
     if request.method == "POST":
         form = AskForm(request.POST)
@@ -80,7 +80,7 @@ def ask_question(request):
         'session': request.session,
     })
 
-# вход в личный кабинет
+
 def user_signup(request):
     if request.method == "POST":
         form = SignupForm(request.POST)
@@ -101,7 +101,7 @@ def user_signup(request):
         'session': request.session,
     })
 
-# для регистрации
+
 def user_login(request):
     if request.method == "POST":
         form = LoginForm(request.POST)
@@ -121,7 +121,7 @@ def user_login(request):
         'session': request.session,
     })
 
-# для выхода
+
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect('/')
