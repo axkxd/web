@@ -5,7 +5,7 @@ from django.urls import reverse
 
 
 class QuestionManager(models.Manager):
-    '''Менеджер для модели вопросов.'''
+
     def new(self):
         return self.order_by('-added_at')
     def popular(self):
@@ -13,7 +13,7 @@ class QuestionManager(models.Manager):
 
 
 class Question(models.Model):
-    '''Создает модель вопросов.'''
+
     title = models.CharField(max_length = 150)
     text = models.TextField(max_length = 1500)
     added_at = models.DateTimeField(auto_now_add = True)
@@ -31,7 +31,7 @@ class Question(models.Model):
 
 
 class Answer(models.Model):
-    '''Создает модель ответов.'''
+
     text = models.TextField(max_length = 1500)
     added_at = models.DateTimeField(auto_now_add = True)
 
