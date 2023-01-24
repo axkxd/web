@@ -28,21 +28,21 @@
 
     sudo apt-get install python-pip
 
-    sudo pip install django==1.10.5
+    `sudo pip install django==1.10.5`
 
 - Nginx
 
-    sudo apt-get install nginx
+        sudo apt-get install nginx
 
 - Gunicorn
 
-    sudo apt-get install gunicorn
+        sudo apt-get install gunicorn
 
 - Mysql
 
-    sudo apt-get install mysql-client mysql-server
+        sudo apt-get install mysql-client mysql-server
 
-    sudo apt-get install python-dev libmysqlclient-dev build-essential
+        sudo apt-get install python-dev libmysqlclient-dev build-essential
 
-    sudo pip install mysqlclient
+        sudo pip install mysqlclient
 
